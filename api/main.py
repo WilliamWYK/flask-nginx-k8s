@@ -4,6 +4,10 @@ from db import get_users, add_user
 
 app = Flask(__name__)
 
+@app.route('/',method=['GET'])
+def home():
+    return "Hello world"
+
 @app.route('/users', methods=['POST', 'GET'])
 def users():
     if request.method == 'POST':
@@ -11,10 +15,6 @@ def users():
         add_user(user)
         return 'User added'
     return get_users()
-
-@app.route('/',method=['GET'])
-def home():
-    return "Hello world"
 
 if __name__ == '__main__':
     app.run()
