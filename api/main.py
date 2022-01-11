@@ -4,7 +4,7 @@ from db import get_users, add_user
 
 app = Flask(__name__)
 
-@app.route('/',method=['GET'])
+@app.route('/')
 def home():
     return "Hello world"
 
