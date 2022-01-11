@@ -12,5 +12,9 @@ def users():
         return 'User added'
     return get_users()
 
+@app.route('/',method=['GET'])
+def home():
+    return "Hello world"
+
 if __name__ == '__main__':
     app.run()
