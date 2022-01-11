@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: flask
-        image: asia-east1-docker.pkg.dev/no-org-329603/flask-api-repo/flask-app_api:v3
+        image: asia-east1-docker.pkg.dev/no-org-329603/flask-api-repo/flask-app_api:v4
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
