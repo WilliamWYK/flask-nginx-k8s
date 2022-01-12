@@ -33,5 +33,23 @@ spec:
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
+        resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: flask-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: flask
+  minReplicas: 1
+  maxReplicas: 6
+  targetCPUUtilizationPercentage: 50
 
 
